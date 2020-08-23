@@ -23,6 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "/panel/",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -34,7 +35,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "/panel/",
   "browserslist": {
     "production": [
       ">0.2%",
