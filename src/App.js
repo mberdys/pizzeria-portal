@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {Provider} from 'react-redux';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Home from './components/views/Home/Home';
@@ -9,13 +10,15 @@ import Kitchen from './components/views/Kitchen/Kitchen';
 import TablesBooking from './components/views/TablesBooking/TablesBooking';
 import TablesEvent from './components/views/TablesEvent/TablesEvent';
 import Ordering from './components/views/Ordering/Ordering';
-import OrderingNew from './components/views/OrderingNew/OrderingNew';
+import OrderingNew from './components/views/OrderingNew/OrderingNewContainer';
 import OrderingOrder from './components/views/OrderingOrder/OrderingOrder';
+import store from './redux/store';
 
 function App() {
   return (
     <BrowserRouter basename={'panel'}>
       <MainLayout>
+        <Provider store={store} />
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
           <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
